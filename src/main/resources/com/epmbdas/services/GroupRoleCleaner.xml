@@ -1,0 +1,14 @@
+<someservice id="GroupRoleCleaner">
+<description>
+    Service for cleaning groups, that have project roles.
+    Input is case-sensitive and limited to 255 symbols: https://jira.atlassian.com/browse/JRASERVER-23535. Feel free to add a new service.
+    Use correct groups' names and "," as separator.
+</description>
+<properties>
+    <property>
+        <key>Affected Groups</key>
+        <name>Specify Groups:</name>
+        <type>text</type>
+    </property>
+</properties>
+</someservice>
