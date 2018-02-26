@@ -17,7 +17,7 @@ public class GroupRoleCleaner extends AbstractService {
     }
 
     public void run() {
-        if (input != null && input.length() > 0) {
+        if (input != null && input.length() > 1) {
 
             List<String> groups = Arrays.asList(input.split(","));
             ProjectRoleManager projectRoleManager = (ProjectRoleManager) ComponentAccessor.getComponentOfType(ProjectRoleManager.class);
