@@ -1,6 +1,7 @@
 package com.epmbdas.services;
 
 import com.atlassian.configurable.ObjectConfiguration;
+
 import com.atlassian.configurable.ObjectConfigurationException;
 import com.atlassian.jira.component.ComponentAccessor;
 import com.atlassian.jira.security.roles.ProjectRoleManager;
@@ -17,7 +18,7 @@ public class GroupRoleCleaner extends AbstractService {
     }
 
     public void run() {
-        if (input != null && input.length() > 1) {
+        if (input != null && input.length() > 0) {
 
             List<String> groups = Arrays.asList(input.split(","));
             ProjectRoleManager projectRoleManager = (ProjectRoleManager) ComponentAccessor.getComponentOfType(ProjectRoleManager.class);
@@ -27,10 +28,10 @@ public class GroupRoleCleaner extends AbstractService {
             }
         }
     }
-
     @Override
     public void init(PropertySet props) throws ObjectConfigurationException {
         super.init(props);
         if (hasProperty("Affected Groups")) input = getProperty("Affected Groups");
     }
+
 }
